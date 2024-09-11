@@ -81,5 +81,4 @@ def classify_emotion():
     result = emotion_classification(user_input, Emotions)
     return jsonify({"emotion": result})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+
