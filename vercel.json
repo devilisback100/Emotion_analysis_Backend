@@ -12,6 +12,7 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "installCommand": "pip3 install --disable-pip-version-check --target . --upgrade -r requirements.txt"
 }
 
