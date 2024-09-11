@@ -1,18 +1,18 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.py", "use": "@vercel/python" }
+    { "src": "index.py", "use": "@vercel/python",
+"config": { "runtime": "python3.09" } }
   ],
   "routes": [
     {
       "src": "/classify_emotion",
-      "dest": "/api/classify_emotion"
+      "dest": "/classify_emotion"
     },
     {
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "installCommand": "pip3.9 install --disable-pip-version-check --target . --upgrade -r requirements.txt"
+  ]
 }
 
