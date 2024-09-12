@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.py", "use": "@vercel/python",
-"config": { "runtime": "python3.09" } }
+    { "src": "index.py", 
+    "use": "@vercel/python" } }
   ],
   "routes": [
     {
