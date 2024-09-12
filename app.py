@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify 
+# app.py
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import re
 import nltk
@@ -8,11 +9,10 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.exceptions import InconsistentVersionWarning
 
-warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
 
 nltk.data.path.append('./nltk_data')
+nltk.download('omw-1.4')
 try:
     nltk.data.find('corpora/wordnet.zip')
     nltk.data.find('tokenizers/punkt.zip')
