@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import re
@@ -11,17 +10,22 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
+# Ensure NLTK data is available
 nltk.data.path.append('./nltk_data')
 try:
+    nltk.data.find('corpora/stopwords.zip')
     nltk.data.find('corpora/wordnet.zip')
     nltk.data.find('tokenizers/punkt.zip')
 except LookupError:
+    nltk.download('stopwords', download_dir='./nltk_data')
     nltk.download('wordnet', download_dir='./nltk_data')
     nltk.download('punkt', download_dir='./nltk_data')
 
+# Load pre-trained models and vectorizer
 vectorizer = joblib.load('text_data_vectorizer.joblib')
 Model = joblib.load('emotion_model.joblib')
 
+# Initialize NLP tools
 Lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 
