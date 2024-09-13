@@ -9,6 +9,8 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+# Download necessary NLTK data
+nltk.download('omw-1.4')
 
 # Ensure NLTK data is available
 nltk.data.path.append('./nltk_data')
