@@ -12,7 +12,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 nltk.data.path.append('./nltk_data')
-nltk.download('omw-1.4')
 try:
     nltk.data.find('corpora/wordnet.zip')
     nltk.data.find('tokenizers/punkt.zip')
