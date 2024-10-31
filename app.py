@@ -88,3 +88,4 @@ def classify_emotion():
 
 if __name__ == '__main__':
     app.run(debug=True)
+# #sadness (0), joy (1), love (2), anger (3), fear (4), and surprise (5).
