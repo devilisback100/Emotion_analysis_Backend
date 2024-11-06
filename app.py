@@ -11,14 +11,15 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Ensure NLTK data is available
 nltk.data.path.append('./nltk_data')
-try:
-    nltk.data.find('corpora/stopwords.zip')
-    nltk.data.find('corpora/wordnet.zip')
-    nltk.data.find('tokenizers/punkt.zip')
-except LookupError:
-    nltk.download('stopwords', download_dir='./nltk_data')
-    nltk.download('wordnet', download_dir='./nltk_data')
-    nltk.download('punkt', download_dir='./nltk_data')
+required_nltk_data = ['corpora/stopwords.zip',
+                      'corpora/wordnet.zip', 'tokenizers/punkt.zip']
+
+for data in required_nltk_data:
+    try:
+        nltk.data.find(data)
+    except LookupError:
+        nltk.download(data.split('/')[-1].split('.')
+                      [0], download_dir='./nltk_data')
 
 # Load pre-trained models and vectorizer
 vectorizer = joblib.load('text_data_vectorizer.joblib')
