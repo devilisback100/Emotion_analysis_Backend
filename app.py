@@ -12,7 +12,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # Ensure NLTK data is available
 nltk.data.path.append('./nltk_data')
 required_nltk_data = ['corpora/stopwords',
-                      'corpora/wordnet', 'tokenizers/punkt']
+                      'corpora/wordnet', 'tokenizers/punkt', 'corpora/omw-1.4']
 
 for data in required_nltk_data:
     try:
